@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, .dark {
+    --background: 220.00000 16.36364% 10.78431%;
+    --foreground: 216.00000 33.33333% 97.05882%;
+    --card: 218.18182 16.41791% 13.13725%;
+    --card-foreground: 216.00000 33.33333% 97.05882%;
+    --popover: 218.18182 16.41791% 13.13725%;
+    --popover-foreground: 216.00000 33.33333% 97.05882%;
+    --primary: 352.02532 66.38655% 46.66667%;
+    --primary-hover: 352.10526 66.27907% 33.72549%;
+    --technical-blue: 216.00000 86.95652% 54.90196%;
+    --pdf-paper: 0 0% 100%;
+    --primary-foreground: 216.00000 33.33333% 97.05882%;
+    --secondary: 215.29412 19.10112% 17.45098%;
+    --secondary-foreground: 216.00000 33.33333% 97.05882%;
+    --muted: 215.29412 19.10112% 17.45098%;
+    --muted-foreground: 212.30769 29.32331% 73.92157%;
+    --accent: 352.10526 66.27907% 33.72549%;
+    --accent-foreground: 216.00000 33.33333% 97.05882%;
+    --destructive: 352.02532 66.38655% 46.66667%;
+    --destructive-foreground: 216.00000 33.33333% 97.05882%;
+    --border: 211.20000 18.24818% 26.86275%;
+    --input: 211.20000 18.24818% 26.86275%;
+    --ring: 352.02532 66.38655% 46.66667%;
+    --brand: 215.29412 19.10112% 17.45098%;
+    --eng-blue: 212.30769 29.32331% 73.92157%;
+    --brand-foreground: 216.00000 33.33333% 97.05882%;
+    --highlight: 352.02532 66.38655% 46.66667%;
+    --highlight-foreground: 216.00000 33.33333% 97.05882%;
+    --hover-bg: 215.29412 19.10112% 17.45098%;
+    --separator: 214.73684 18.09524% 20.58824%;
+    --sidebar-background: 220.00000 16.36364% 10.78431%;
+    --sidebar-foreground: 216.00000 33.33333% 97.05882%;
+    --sidebar-primary: 352.02532 66.38655% 46.66667%;
+    --sidebar-primary-foreground: 216.00000 33.33333% 97.05882%;
+    --sidebar-accent: 215.29412 19.10112% 17.45098%;
+    --sidebar-accent-foreground: 216.00000 33.33333% 97.05882%;
+    --sidebar-border: 211.20000 18.24818% 26.86275%;
+    --sidebar-ring: 352.02532 66.38655% 46.66667%;
+    --radius: 0rem;
+  }
+  .section-light, .section-brand {
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--highlight));
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Archivo', sans-serif;
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply mx-auto px-6 md:px-12 lg:px-20 xl:px-32;
+    max-width: 1600px;
+  }
+
+  .text-display {
+    @apply text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-normal;
+    font-family: 'Archivo', sans-serif;
+  }
+
+  .text-headline {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-normal;
+    font-family: 'Archivo', sans-serif;
+  }
+
+  .text-label {
+    @apply text-[11px] md:text-xs uppercase tracking-[0.18em] text-muted-foreground;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .hover-highlight {
+    @apply transition-colors duration-300;
+  }
+
+  .hover-highlight:hover {
+    color: hsl(var(--primary-hover));
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-current origin-left scale-x-0 transition-transform duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+
+  .image-reveal {
+    @apply overflow-hidden;
+  }
+
+  .image-reveal img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .image-reveal:hover img {
+    @apply scale-105;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.5s ease-out forwards;
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.profile-name { font-size: 40px; letter-spacing: 0; }
+.profile-frame {
+  background-image: linear-gradient(hsl(var(--muted-foreground) / 0.06) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--muted-foreground) / 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+@media (min-width: 768px) { .profile-name { font-size: 52px; } }
+@media (min-width: 1024px) { .profile-name { font-size: 60px; } }
+@media (min-width: 1440px) { .profile-name { font-size: 72px; } }
+
+.pdf-page { background: hsl(var(--pdf-paper)); }
+.pdf-scroll { height: 75vh; min-height: 360px; max-height: 1100px; }
+.pdf-viewer:fullscreen { display: flex; flex-direction: column; height: 100%; border: 0; }
+.pdf-viewer:fullscreen .pdf-scroll { flex: 1; height: auto; min-height: 0; max-height: none; }
+@media (max-width: 640px) { .pdf-scroll { height: 70svh; min-height: 300px; } }
+@layer utilities {
+  .hover\:text-primary:hover, .hover\:text-highlight:hover { color: hsl(var(--primary-hover)); }
+  .hover\:bg-highlight:hover { background-color: hsl(var(--primary-hover)); }
+}
