@@ -52,7 +52,7 @@ export const projectDocuments: Record<string, ProjectDocument[]> = {
   "lighting-design-dialux": [
     {
       id: "lighting-hadu",
-      filename: "Lighting Design Dialux/LIGHTING-HADU.pdf",
+      filename: "Lighting Design Dialux/HADU VOCATIONAL TRAINING CENTRE _Report.pdf",
       title: "Hadu Lighting Design",
       description: "Lighting design documentation.",
       order: 1,

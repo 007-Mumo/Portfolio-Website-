@@ -21,7 +21,7 @@ export function Header() {
         <Link
           to="/"
           onClick={() => setOpen(false)}
-          aria-label="BMM — Home"
+          aria-label="BM — Home"
           className="flex items-center"
         >
           <span className="font-display font-black text-xl border border-primary/60 text-foreground px-3 py-2 tracking-tight">

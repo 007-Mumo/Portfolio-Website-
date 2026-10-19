@@ -2,7 +2,7 @@
 // Leave a value empty ("") to hide it until verified.
 
 export const site = {
-  name: "BMM",
+  name: "Brian Mumo Musyoki",
   monogram: "BM",
 
   title: "Graduate Engineer | Electrical and Electronics Engineering",
@@ -31,8 +31,8 @@ export const site = {
 
   origin: "https://mosaic-muse-09.lovable.app",
 
-  email: "",
-  phone: "",
+  email: "Mumobrian506@gmail.com",
+  phone: "0748134486",
   linkedin: "",
   github: "",
 
