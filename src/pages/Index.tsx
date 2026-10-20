@@ -35,7 +35,7 @@ export default function Index() {
       <div className="flex flex-wrap items-end justify-between gap-4 mb-8"><div><p className="text-label text-destructive mb-3">Selected work</p><h2 id="featured" className="font-display text-3xl md:text-4xl font-bold">Featured Projects</h2></div><Link to="/projects" className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-hover">All projects <ArrowUpRight size={16} /></Link></div>
       <div className="grid md:grid-cols-3 gap-6">
         {projects.slice(0, 3).map((p) => <Link key={p.id} to={`/projects/${p.id}`} className="group border border-border bg-card hover:border-primary transition-colors">
-          <div className="relative aspect-[4/3] overflow-hidden"><img src={p.coverImage} alt={`Illustrative photograph for ${p.title}`} className="w-full h-full object-cover" loading="lazy" /><span className="absolute bottom-3 left-3 bg-background/90 text-muted-foreground font-mono text-[10px] px-2 py-1">Illustrative photo · evidence pending</span></div>
+          <div className="relative aspect-[4/3] overflow-hidden"><img src={p.coverImage} alt={`Illustrative photograph for ${p.title}`} className="w-full h-full object-cover" loading="lazy" /><span className="absolute bottom-3 left-3 bg-background/90 text-muted-foreground font-mono text-[10px] px-2 py-1"></span></div>
           <div className="p-5"><p className="text-label">{p.code} / {p.category}</p><h3 className="font-display font-bold text-lg mt-2 group-hover:text-primary">{p.title}</h3><p className="text-sm text-muted-foreground mt-3 leading-relaxed">{p.role}</p><p className="text-primary text-sm mt-5 inline-flex items-center gap-2">View case study <ArrowUpRight size={15} /></p></div>
         </Link>)}
       </div>
